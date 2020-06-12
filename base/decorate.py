@@ -27,3 +27,26 @@ def base_func(p):
 print("class as the decorator")
 print(base_func)
 base_func(1)
+
+print("********************************************")
+print("decorator with parameter")
+
+def common_para(param):
+    print("get param: {}".format(param))
+
+    def common_deco(func):
+        print("get function: {}".format(func.__name__))
+
+        def wrapper(*args, **kwargs):
+            print("decro para: {}".format(param))
+            print("args: ".format(args))
+            return func(*args, **kwargs)
+        return wrapper
+
+    return common_deco
+
+@common_para("abc")
+def base_func(p):
+    print(p)
+
+base_func(1)
