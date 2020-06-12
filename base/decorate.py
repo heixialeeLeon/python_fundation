@@ -3,7 +3,7 @@ print("function decorator")
 
 def common(func):
     def _deco(*args, **kwargs):
-        print("args: ".format(args))
+        print("args: {}".format(args))
         return func(*args,**kwargs)
     return _deco
 
@@ -20,7 +20,7 @@ class common_class(object):
         self.func = func
 
     def __call__(self, *args, **kwargs):
-        print("args:".format(args))
+        print("args: {}".format(args))
         return self.func(*args, **kwargs)
 
 @common_class
