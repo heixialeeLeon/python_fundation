@@ -61,3 +61,7 @@ print("")
 print("For the abc class inherit with implement the __subclasshook__")
 print("BBB is the sublcass of AAA: {}".format(issubclass(BBB, AAA)))
 print("CCC is the sublcass of AAA: {}".format(issubclass(CCC, AAA)))
+
+print("AAA base class is {}".format(AAA.__base__))
+print("BBB base class is {}".format(BBB.__base__))
+print("CCC base class is {}".format(CCC.__base__))
