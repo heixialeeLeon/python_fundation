@@ -5,6 +5,9 @@ def make_multiplier_of(n):
 
     return multiplier
 
+def normal_function(n):
+    return n*n
+
 times3 = make_multiplier_of(3)
 times5 = make_multiplier_of(5)
 
@@ -13,3 +16,12 @@ print(times5(3))
 
 print(times3.__closure__[0].cell_contents)
 print(times5.__closure__[0].cell_contents)
+
+"""
+The normal function.__closure__ is None
+The closure function.__closure__ is not None
+"""
+print("the difference of the function and closure")
+print(normal_function.__closure__ is None)
+print(times3.__closure__ is None)
+print(times5.__closure__ is None)
