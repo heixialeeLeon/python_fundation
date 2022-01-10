@@ -53,8 +53,6 @@ class Spam:
         self.__val = value
 
 class Spam_NoSuager(object):
-    def __new__(cls, *args, **kwargs):
-        print(">>> enter Spam.__new__")
 
     def __init__(self, val):
         print(">>> enter Spam_NoSuager.__init__")
