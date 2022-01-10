@@ -79,3 +79,33 @@ ss = Spam_NoSuager(4)
 print(ss.val)
 ss.val = 100
 print(ss.val)
+
+print("****************************************************")
+print("anthoer simple way to use the property")
+
+class Foo(object):
+    def __init__(self, a, b, c):
+        self._a = a
+        self._b = b
+        self._c = c
+
+    def _callback_proptrey(name):
+        def fget(self):
+            print("call in fget")
+            return getattr(self, name)
+
+        def fset(self, value):
+            print("call in fset")
+            setattr(self, name, value)
+
+        return property(fget, fset)
+
+    a = _callback_proptrey("_a")
+    b = _callback_proptrey("_b")
+    c = _callback_proptrey("_c")
+    del _callback_proptrey
+
+foo = Foo(1,2,3)
+print(foo.a)
+foo.b =10
+print(foo.b)
