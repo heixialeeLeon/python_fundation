@@ -43,3 +43,10 @@ foo_iter = Foo_iter(5)
 for i in foo_iter:
     print(i)
 
+print("******************************")
+print("The type difference: ")
+from typing import Iterable, Iterator
+print("foo_getitem is Iterable: {}".format(isinstance(foo_getitem, Iterable)))
+print("foo_getitem is Iterator: {}".format(isinstance(foo_getitem, Iterator)))
+print("foo_iter is Iterable: {}".format(isinstance(foo_iter, Iterable)))
+print("foo_iter is Iterator: {}".format(isinstance(foo_iter, Iterator)))
