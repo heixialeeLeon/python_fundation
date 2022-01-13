@@ -56,3 +56,16 @@ method的另类调用方法
 bm = p.distance
 print(bm())
 print(bm.__func__(bm.__self__))
+
+print("**********************************************")
+
+"""
+获取bound method的function 和 instance
+"""
+print("通过bound method获取与其绑定的function")
+print("{}".format(id(Point.distance)))
+print("{}".format(id(p.distance.__func__)))
+
+print("通过bound method获取与其绑定的instance")
+print("{}".format(id(p)))
+print("{}".format(id(p.distance.__self__)))
