@@ -31,12 +31,18 @@ print("*********************************************")
 """
 print("__get__ in function: {}".format(hasattr(Point.distance, '__get__')))
 print(type(Point.distance.__get__(p)))
-"the address of the bound method"
+# the address of the bound method
+print("two way to get the address of the bound method: ")
 print(id(Point.distance.__get__(p)))
 print(id(p.distance))
 # the address of the function
+print("two way to get the address of the function: ")
 print(id(Point.distance))
 print(id(p.distance.__func__))
+# the address of the instance
+print("two way to get the address of the instance: ")
+print(id(p))
+print(id(p.distance.__self__))
 print("**********************************************")
 
 """
