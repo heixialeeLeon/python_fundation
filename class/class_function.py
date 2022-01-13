@@ -27,8 +27,13 @@ print("method type in instance: {}".format(type(p.distance)))
 print("*********************************************")
 
 """
-类中的方法其实是一种描述符
+类中的方法其实是一种描述符,类中的方法也是一种属性：
+知识点补充：
+如果属性在对象属性空间中找不到，Python 接着在其类型对象属性空间中查找
+1. 如果在类型对象属性空间中找到的属性不是描述符，Python 原样返回
+2. 如果在类型对象属性空间中找到的属性是描述符，Python 将调用其 __get__ 方法，将实例对象与它进行绑定。
 """
+
 print("__get__ in function: {}".format(hasattr(Point.distance, '__get__')))
 print(type(Point.distance.__get__(p)))
 # the address of the bound method
