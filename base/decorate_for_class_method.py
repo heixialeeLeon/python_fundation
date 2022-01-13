@@ -44,6 +44,10 @@ class Context_Class(object):
         else:
             print("__get__ is called, instance is Not None")
             aa = types.MethodType(self, instance)
+            """
+            注意，这里是把instance[boo] 和 Context_Class这个描述符绑定
+            所以其返回的bound method会直接调用__call__, 在__call__里再调用其修饰的函数
+            """
             return types.MethodType(self, instance)
 
 class Boo(object):
